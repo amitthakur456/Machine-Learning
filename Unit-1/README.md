@@ -91,4 +91,5 @@ Supervised machine learnig based on the supervision. In the supervised machine l
  1. The output of unsupervised learning is not accurate as the dataset is not labelled and algorithm are not trained on exact output in prior.
  2. Working with unsupervised learning is more difficult as it work on the unlabelled dataset that does not map out with output.
  ### Application on unsupervised learning :-
- 1. Network Analysis :- Unsupervised learning is used for identify the plagiarism and copyright in the document network analysis of the text for scho
+ 1. Network Analysis :- Unsupervised learning is used for identify the plagiarism and copyright in the document network analysis of the text for scholarity.
+ 2. Recommendation System : -  Recommendation system are commonly used in the unsupervised learning for building recommendation system 
