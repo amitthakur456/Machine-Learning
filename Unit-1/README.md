@@ -92,4 +92,44 @@ Supervised machine learnig based on the supervision. In the supervised machine l
  2. Working with unsupervised learning is more difficult as it work on the unlabelled dataset that does not map out with output.
  ### Application on unsupervised learning :-
  1. Network Analysis :- Unsupervised learning is used for identify the plagiarism and copyright in the document network analysis of the text for scholarity.
- 2. Recommendation System : -  Recommendation system are commonly used in the unsupervised learning for building recommendation system 
+ 2. Recommendation System : -  Recommendation system are commonly used in the unsupervised learning for building recommendation application for different web application and e - commerce .
+ 3. Anomaly Detection : - Anomaly Detection is a popular application of an unsupervised learning , which can identify the unusual data point to dataset. It is a used to discove the fraudulent discover.
+ 4. Singular value Decomposition :- Singular value Decomposition are used to extract the particular information from the database.
+### Semi - supervised learning :- 
+1.  Semi supervised learning is a type of machine learning algorithm that lies on the supervised and unsupervised learning .
+2.  It represent the intermediate ground between supervised( with training data) and unsupervised learnig (with unlabelled data) algorithms and uses the combination of training labelled and unlabelled dataset during the training peroid.
+3.  A semi supervised learning is the middle ground of supervised and unsupervised learning
+   import tensorflow as tf
+from tensorflow.keras import layers, models
+
+# Example CNN model
+def create_model():
+    model = models.Sequential([
+        layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.MaxPooling2D((2, 2)),
+        layers.Flatten(),
+        layers.Dense(64, activation='relu'),
+        layers.Dense(1, activation='sigmoid')
+    ])
+    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    return model
+
+# Train the model on the small labeled dataset
+model = create_model()
+model.fit(labeled_images, labeled_labels, epochs=10, batch_size=32, validation_split=0.2)
+
+# Use the model to predict labels for the unlabeled dataset
+pseudo_labels = model.predict(unlabeled_images)
+high_confidence_indices = pseudo_labels > 0.8
+pseudo_labeled_images = unlabeled_images[high_confidence_indices]
+pseudo_labeled_labels = pseudo_labels[high_confidence_indices]
+
+# Combine labeled and pseudo-labeled data
+combined_images = np.concatenate((labeled_images, pseudo_labeled_images), axis=0)
+combined_labels = np.concatenate((labeled_labels, pseudo_labeled_labels), axis=0)
+
+# Retrain the model with the combined dataset
+model.fit(combined_images, combined_labels, epochs=10, batch_size=32)
+
