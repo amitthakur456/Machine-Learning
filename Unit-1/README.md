@@ -213,4 +213,9 @@ Identify patterns, outliers, and important features.
 - Data Spilliting :-
   1. it means that spilt the data according the training and testing .
   2. sometime of data should be vaild set model which prepared should fine tune with proper parameter.
+- Model Selction:-
+  1. Select the model on the basis of data characteristics and problem parameter.
+- Model Training : -
+  1. Trained the model on the training.
+  2. optimize the parameter.
   
