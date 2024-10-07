@@ -147,3 +147,4 @@ UNIT 1 :-
 - **Example Use Cases**:
    - ➜ Image classification where only some images are labeled.
    - ➜ Text categorization with a small set of labeled documents and a large set of unlabeled ones.
+   - semi supervised learning algorithm works on the middle ground of su
